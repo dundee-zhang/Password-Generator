@@ -4,11 +4,20 @@ bool Passwords::verify()
 {
     std::ifstream getMP("bin/.data/mp.txt");
     std::string userPass {""}, storedMP {""};
+    getMP >> storedMP;
+
+    if(storedMP == "NULL")
+    {
+        std::cout << "NO MASTER PASSWORD FOUND" << std::endl;
+        std::cout << "Set a Master Password" << std::endl;
+        getMP.close();
+        Passwords userSet;
+        userSet.masterPass();
+        return true;
+    }
 
     std::cout << "Enter master password: ";
     std::cin >> userPass;
-
-    getMP >> storedMP;
 
     if(storedMP == userPass)
     {
