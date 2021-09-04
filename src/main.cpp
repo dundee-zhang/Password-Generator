@@ -7,18 +7,19 @@ int main()
     printf("[0] Set/Change Master Password\n[1] Generate Password\n[2] See Past Passwords\n[3] Search Passwords\n[Other] Exit\n>> ");
     scanf("%d", &option);
 
+    Passwords user;
+
     if(option == 1)
     {
-        Passwords ob;
-        ob.generate();
+        user.generate();
     }
     else if(option == 2)
     {
-        // display old passwords
+        user.display();
     }
     else if(option == 3)
     {
-        // search passwords
+        user.search();
     }
     else if(option == 0)
     {
