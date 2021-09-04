@@ -16,23 +16,26 @@ void Passwords::generate()
 
     for(int i = 0; i < length; i++)
     {
-        int characterPlace = 1 + (rand() % 84);
+        int characterPlace = 1 + (rand() % 83);
 
         product += passwordChars.at(characterPlace);
     }
     std::cout << "Your password is: " << std::endl << product << std::endl;
 
-    std::ofstream writeData(".data/stored.txt", std::ios::app);
+    std::ofstream ofile("bin/.data/stored.txt", std::ios::app);
 
     std::cout << "Would you like to label this password (Y/n): ";
+
+    std::cin >> nameOption;
 
     if(nameOption == "yes" || nameOption == "Yes" || nameOption == "Y" || nameOption == "y" || nameOption == "YES")
     {
         std::cout << std::endl << "What is the label name: ";
         std::cin >> nameNamed;
+        ofile << nameNamed << " " << product << '\n';
     }
     else
     {
-        writeData << nameNamed << " " << product << '\n';
+        ofile << nameNamed << " " << product << '\n';
     }
 }
