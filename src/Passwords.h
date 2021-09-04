@@ -10,6 +10,7 @@ public:
     void display();
     bool verify();
     void inputPassword();
+    void masterPass();
 };
 
 
