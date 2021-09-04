@@ -2,7 +2,12 @@
 
 void Passwords::search()
 {
-    std::ifstream readFile("bin/.data/stored.txt");
+    Passwords searchObj;
+    bool verified = searchObj.verify();
+
+    if(verified == true)
+    {
+        std::ifstream readFile("bin/.data/stored.txt");
     std::cout << "Enter name of password: ";
     std::string passName {""};
     std::string filePassName {""}, filePassword {""};
@@ -25,19 +30,11 @@ void Passwords::search()
     std::cout << "No passwords with label \"" << passName << "\" found" << std::endl
         << "Displaying all passwords: " << std::endl;
 
-    Passwords searchObj;
-    bool verified = searchObj.verify();
-    
-    if(verified == true)
-    {
-        std::cout << std::endl << "PASSWORDS:" << std::endl;
-        searchObj.display();
-        readFile.close();
+    std::cout << std::endl << "PASSWORDS:" << std::endl;
+    searchObj.display();
+    readFile.close();
     }
-    else
-    {
-        readFile.close();
-    }
+
 }
 
 void Passwords::display()
