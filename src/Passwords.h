@@ -6,6 +6,8 @@ class Passwords
 private:
 public:
     void generate();
+    void search();
+    void display();
 };
 
 
