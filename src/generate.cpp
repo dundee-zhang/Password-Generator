@@ -1,5 +1,7 @@
 #include "includes.h"
 
+void settingPassword();
+
 void Passwords::generate()
 {
     srand((unsigned) time(0));
@@ -66,4 +68,45 @@ void Passwords::inputPassword()
     }
 
     ofile.close();
+}
+
+void Passwords::masterPass()
+{
+    std::ifstream readPassword("bin/.data/mp.txt");
+
+    std::string password {""}, userInputMP{""};
+
+    readPassword >> password;
+
+    if(password != "NULL")
+    {
+        std::cin >> userInputMP;
+        if(userInputMP == password)
+        {
+            settingPassword();
+            readPassword.close();
+        }
+        else
+        {
+            std::cout << "Wrong Password" << std::endl;
+            readPassword.close();
+        }
+    }
+    else
+    {
+        settingPassword();
+        readPassword.close();
+    }
+}
+
+void settingPassword()
+{
+    std::ofstream generateNewPass("bin/.data/mp.txt");
+    std::string newPass {""};
+    
+    std::cout << "Enter new master password: ";
+    std::cin >> newPass;
+
+    generateNewPass << newPass;
+    generateNewPass.close();
 }
