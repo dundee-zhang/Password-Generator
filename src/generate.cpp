@@ -41,3 +41,29 @@ void Passwords::generate()
 
     ofile.close();
 }
+
+void Passwords::inputPassword()
+{
+    std::string product {""}, nameOption {""}, nameNamed {""};
+    std::cout << "Input Password: ";
+    std::cin >> product;
+
+    std::ofstream ofile("bin/.data/stored.txt", std::ios::app);
+
+    std::cout << "Would you like to label this password (Y/n): ";
+
+    std::cin >> nameOption;
+
+    if(nameOption == "yes" || nameOption == "Yes" || nameOption == "Y" || nameOption == "y" || nameOption == "YES")
+    {
+        std::cout << std::endl << "What is the label name: ";
+        std::cin >> nameNamed;
+        ofile << nameNamed << " " << product << '\n';
+    }
+    else
+    {
+        ofile << nameNamed << " " << product << '\n';
+    }
+
+    ofile.close();
+}
