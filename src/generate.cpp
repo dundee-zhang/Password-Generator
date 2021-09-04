@@ -38,4 +38,6 @@ void Passwords::generate()
     {
         ofile << nameNamed << " " << product << '\n';
     }
+
+    ofile.close();
 }
