@@ -2,7 +2,25 @@
 
 void Passwords::search()
 {
+    std::ifstream readFile("bin/.data/stored.txt");
+    std::cout << "Enter name of password: ";
+    std::string passName {""};
+    std::string filePassName {""}, filePassword {""};
+    std::cin >> passName;
 
+    while(readFile >> filePassName)
+    {
+        if(passName == filePassName)
+        {
+            readFile >> filePassword;
+            std::cout << "The password is: " << filePassword << std::endl;
+            break;
+        }
+        else
+        {
+            continue;
+        }
+    }
 }
 
 void Passwords::display()
@@ -21,4 +39,5 @@ void Passwords::display()
         std::cout << readDisplayName << ": " << readDisplayPass;
         std::cout << std::endl;
     }
+    readFile.close();
 }

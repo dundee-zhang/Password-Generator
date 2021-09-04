@@ -1,5 +1,7 @@
 #include "includes.h"
 
+void masterPass();
+
 int main()
 {
     int option {};
@@ -19,7 +21,7 @@ int main()
     }
     else if(option == 3)
     {
-        user.search();
+        user.search(); // todo
     }
     else if(option == 0)
     {
@@ -30,4 +32,21 @@ int main()
         return 0;
     }
     return 0;
+}
+
+void masterPass()
+{
+    std::ifstream readPassword("bin/.data/mp.txt");
+    std::string password;
+
+    readPassword >> password;
+
+    if(password != "NULL")
+    {
+        // confirm and change password
+    }
+    else
+    {
+        // generate new password
+    }
 }
