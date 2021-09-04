@@ -9,11 +9,12 @@ int main(int argc, char** argv)
     else
     {
         std::string arg = argv[1];
+        std::string searchName = argv[2];
         Passwords user;
 
         if(arg == "-s")
         {
-            user.search();
+            user.search(searchName);
         }
         else if(arg == "-g")
         {
