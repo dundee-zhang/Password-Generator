@@ -21,6 +21,23 @@ void Passwords::search()
             continue;
         }
     }
+
+    std::cout << "No passwords with label \"" << passName << "\" found" << std::endl
+        << "Displaying all passwords: " << std::endl;
+
+    Passwords searchObj;
+    bool verified = searchObj.verify();
+    
+    if(verified == true)
+    {
+        std::cout << std::endl << "PASSWORDS:" << std::endl;
+        searchObj.display();
+        readFile.close();
+    }
+    else
+    {
+        readFile.close();
+    }
 }
 
 void Passwords::display()
@@ -39,5 +56,7 @@ void Passwords::display()
         std::cout << readDisplayName << ": " << readDisplayPass;
         std::cout << std::endl;
     }
+
+    
     readFile.close();
 }
