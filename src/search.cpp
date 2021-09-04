@@ -1,6 +1,6 @@
 #include "includes.h"
 
-void Passwords::search()
+void Passwords::search(std::string searched)
 {
     Passwords searchObj;
     bool verified = searchObj.verify();
@@ -8,10 +8,8 @@ void Passwords::search()
     if(verified == true)
     {
         std::ifstream readFile("bin/.data/stored.txt");
-    std::cout << "Enter name of password: ";
-    std::string passName {""};
-    std::string filePassName {""}, filePassword {""};
-    std::cin >> passName;
+        std::string passName {searched};
+        std::string filePassName {""}, filePassword {""};
 
     while(readFile >> filePassName)
     {
