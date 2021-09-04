@@ -6,7 +6,13 @@ int main()
 {
     int option {};
 
-    printf("[0] Set/Change Master Password\n[1] Generate Password\n[2] See Past Passwords\n[3] Search Passwords\n[Other] Exit\n>> ");
+    printf("[0] Set/Change Master Password\n
+            [1] Generate Password\n
+            [2] See Past Passwords\n
+            [3] Search Passwords\n
+            [4] Input Password\n
+            [Other] Exit\n
+            --> ");
     scanf("%d", &option);
 
     Passwords user;
@@ -17,15 +23,22 @@ int main()
     }
     else if(option == 2)
     {
-        user.display();
+        bool verfication = user.verify();
+        if(verfication == true)
+        {
+            user.display();
+        }
     }
     else if(option == 3)
     {
-        user.search(); // todo
+        user.search();
+    }
+    else if(option == 4)
+    {
+        user.inputPassword();
     }
     else if(option == 0)
     {
-        // set masterpass
     }
     else
     {
