@@ -6,7 +6,7 @@ class Passwords
 private:
 public:
     void generate();
-    void search();
+    void search(std::string searched);
     void display();
     bool verify();
     void inputPassword();
