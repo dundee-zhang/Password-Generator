@@ -8,6 +8,8 @@ public:
     void generate();
     void search();
     void display();
+    bool verify();
+    void inputPassword();
 };
 
 
