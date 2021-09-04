@@ -1,65 +1,43 @@
 #include "includes.h"
 
-void masterPass();
-
-int main()
+int main(int argc, char** argv)
 {
-    int option {};
-
-    printf("[0] Set/Change Master Password\n
-            [1] Generate Password\n
-            [2] See Past Passwords\n
-            [3] Search Passwords\n
-            [4] Input Password\n
-            [Other] Exit\n
-            --> ");
-    scanf("%d", &option);
-
-    Passwords user;
-
-    if(option == 1)
+    if(argc == 1)
     {
-        user.generate();
+        std::cout << "Please enter parameters" << std::endl;
     }
-    else if(option == 2)
+    else
     {
-        bool verfication = user.verify();
-        if(verfication == true)
+        std::string arg = argv[1];
+        Passwords user;
+
+        if(arg == "-s")
         {
-            user.display();
+            user.search();
         }
-    }
-    else if(option == 3)
-    {
-        user.search();
-    }
-    else if(option == 4)
-    {
-        user.inputPassword();
-    }
-    else if(option == 0)
-    {
-    }
-    else
-    {
-        return 0;
-    }
-    return 0;
-}
-
-void masterPass()
-{
-    std::ifstream readPassword("bin/.data/mp.txt");
-    std::string password;
-
-    readPassword >> password;
-
-    if(password != "NULL")
-    {
-        // confirm and change password
-    }
-    else
-    {
-        // generate new password
+        else if(arg == "-g")
+        {
+            user.generate();
+        }
+        else if(arg == "-m")
+        {
+            user.masterPass();
+        }
+        else if(arg == "-i")
+        {
+            user.inputPassword();
+        }
+        else if(arg == "-d")
+        {
+            bool verfication = user.verify();
+            if(verfication == true)
+            {
+                user.display();
+            }
+        }
+        else
+        {
+            return -1;
+        }
     }
 }
