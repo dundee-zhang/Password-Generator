@@ -17,11 +17,7 @@ void Passwords::search(std::string searched)
         {
             readFile >> filePassword;
             std::cout << "The password is: " << filePassword << std::endl;
-            break;
-        }
-        else
-        {
-            continue;
+            return;
         }
     }
 
