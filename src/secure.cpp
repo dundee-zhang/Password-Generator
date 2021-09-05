@@ -6,7 +6,7 @@ bool Passwords::verify()
     std::string userPass {""}, storedMP {""};
     getMP >> storedMP;
 
-    if(storedMP == "NULL")
+    if(storedMP == "" || storedMP == "NULL")
     {
         std::cout << "NO MASTER PASSWORD FOUND" << std::endl;
         std::cout << "Set a Master Password" << std::endl;
