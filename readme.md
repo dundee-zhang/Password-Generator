@@ -16,3 +16,6 @@ Coming Soon
 ```-d``` Displays all stored passwords.<br />
 ```-m``` Edit/Manage master password.<br />
 ```-h {-x}``` Displays help options for argument 'x'.
+
+## Contributing ##
+Enter ```make test``` to compile a test version
