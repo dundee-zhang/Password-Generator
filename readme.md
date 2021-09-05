@@ -2,11 +2,12 @@
 A program written in C++ to store and generate passwords.
 
 ## How to use ##
-on macOS/Unix/Linux, extract and cd into release.
-Then enter:
-```./dzPass -arguments```
+### MacOS / Unix / Linux ###
+Extract and cd into release.
+Then enter: ```./dzPass -arguments```
 
-Windows is coming soon.
+### Windows ###
+Coming Soon
 
 ## Running Arguments ##
 ```-g {int x}``` Generates a password x length long.<br />
