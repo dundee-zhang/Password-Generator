@@ -7,7 +7,7 @@ void Passwords::search(std::string searched)
 
     if(verified == true)
     {
-        std::ifstream readFile("bin/.data/stored.txt");
+        std::ifstream readFile(".data/stored.txt");
         std::string passName {searched};
         std::string filePassName {""}, filePassword {""};
 
@@ -33,7 +33,7 @@ void Passwords::search(std::string searched)
 
 void Passwords::display()
 {
-    std::ifstream readFile("bin/.data/stored.txt");
+    std::ifstream readFile(".data/stored.txt");
     std::string readDisplayName, readDisplayPass;
 
     while(readFile >> readDisplayName >> readDisplayPass)
