@@ -1,7 +1,16 @@
 #include "includes.h"
 
+void helpUserOption();
+void helpUser();
+
 int main(int argc, char** argv)
 {
+    if(argc < 2)
+    {
+        char N = 'N';
+        argv[2] = &N;
+    }
+
     if(argc == 1)
     {
         std::cout << "Please enter parameters" << std::endl;
@@ -36,9 +45,29 @@ int main(int argc, char** argv)
                 user.display();
             }
         }
+        else if(arg == "-h")
+        {
+            helpUser();
+        }
         else
         {
-            return -1;
+            helpUserOption();
         }
     }
+}
+
+void helpUserOption()
+{
+    std::cout << "Not an argument" << std::endl;
+    std::cout << "Use -h for help" << std::endl;
+}
+
+void helpUser()
+{
+    std::cout << "'-g' -- Generate a Password" << std::endl;
+    std::cout << "'-i' -- Input a Password" << std::endl;
+    std::cout << "'-s' -- Search for a Password" << std::endl;
+    std::cout << "'-d' -- Display all Password" << std::endl;
+    std::cout << "'-m' -- Master Password Options" << std::endl;
+    std::cout << "'-h' -- Get Help" << std::endl;
 }
