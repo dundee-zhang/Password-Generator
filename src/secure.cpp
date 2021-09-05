@@ -2,7 +2,7 @@
 
 bool Passwords::verify()
 {
-    std::ifstream getMP(".data/mp.txt");
+    std::ifstream getMP("bin/.data/mp.txt");
     std::string userPass {""}, storedMP {""};
     getMP >> storedMP;
 
