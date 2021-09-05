@@ -5,7 +5,7 @@ class Passwords
 {
 private:
 public:
-    void generate();
+    void generate(int length);
     void search(std::string searched);
     void display();
     bool verify();

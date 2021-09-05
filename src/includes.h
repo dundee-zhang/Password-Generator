@@ -8,6 +8,7 @@
 #include <cstdlib>
 #include <cstdio>
 #include <fstream>
+#include <sstream>
 #include "Passwords.h"
 
 #endif // PASSWORD_INCLUDES_H
