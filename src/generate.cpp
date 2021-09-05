@@ -76,6 +76,7 @@ void Passwords::masterPass()
 
     if(password != "NULL")
     {
+        std::cout << "Enter master password: ";
         std::cin >> userInputMP;
         if(userInputMP == password)
         {
