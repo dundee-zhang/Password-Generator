@@ -20,7 +20,7 @@ void Passwords::generate(int length)
     }
     std::cout << "Your password is: " << std::endl << product << std::endl;
 
-    std::ofstream ofile("bin/.data/stored.txt", std::ios::app);
+    std::ofstream ofile(".data/stored.txt", std::ios::app);
 
     std::cout << "Would you like to label this password (Y/n): ";
 
@@ -46,7 +46,7 @@ void Passwords::inputPassword()
     std::cout << "Input Password: ";
     std::cin >> product;
 
-    std::ofstream ofile("bin/.data/stored.txt", std::ios::app);
+    std::ofstream ofile(".data/stored.txt", std::ios::app);
 
     std::cout << "Would you like to label this password (Y/n): ";
 
@@ -68,7 +68,7 @@ void Passwords::inputPassword()
 
 void Passwords::masterPass()
 {
-    std::ifstream readPassword("bin/.data/mp.txt");
+    std::ifstream readPassword(".data/mp.txt");
 
     std::string password {""}, userInputMP{""};
 
@@ -98,7 +98,7 @@ void Passwords::masterPass()
 
 void settingPassword()
 {
-    std::ofstream generateNewPass("bin/.data/mp.txt");
+    std::ofstream generateNewPass(".data/mp.txt");
     std::string newPass {""};
     
     std::cout << "Enter new master password: ";
